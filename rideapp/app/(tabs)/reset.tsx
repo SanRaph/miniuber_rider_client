@@ -4,7 +4,7 @@ import { useRouter } from "expo-router";
 
 
 
-export default function index() {
+export default function reset() {
 
   const router = useRouter();
 
@@ -24,9 +24,9 @@ export default function index() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome Back!</Text>
+      <Text style={styles.title}>Reset password!</Text>
 
-      <Text style={styles.subtitle}>Sign in to use your account</Text>
+      <Text style={styles.subtitle}>Change your password</Text>
 
       <TextInput
         style={styles.input}
@@ -40,21 +40,16 @@ export default function index() {
 
       <TextInput
         style={styles.input}
-        placeholder="Password"
+        placeholder="New Password"
         placeholderTextColor="#aaa"
         secureTextEntry
         value={password}
         onChangeText={setPassword}
       />
 
-      <TouchableOpacity style={styles.forgotpassword} onPress={() => router.push("/reset")}>
-         <Text style={styles.buttonText}>Forgot password?</Text>
+      <TouchableOpacity style={styles.button} onPress={handleSignIn}>
+        <Text style={styles.buttonText}>Reset Password</Text>
       </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button} onPress={() => router.push("/")}>
-        <Text style={styles.buttonText}>Log In</Text>
-      </TouchableOpacity>
-
 
     </View>
   );
